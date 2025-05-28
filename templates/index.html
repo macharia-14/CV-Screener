@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  >
+
+    <title>CV Scanner</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>CV Scanner</h1>
+
+      <!-- Keyword Input -->
+      <div>
+        <label for="keywords">Step 1: Enter or upload Keywords</label>
+        <input
+          type="text"
+          id="keywords"
+          placeholder="e.g. Python, React, Frontend"
+        />
+<input type="file" id="keyword-file" accept=".pdf" />
+     
+
+      <!-- File Upload -->
+     <div>
+  <label for="cv-upload">Step 2: Upload CVs</label>
+  <div class="upload-box" onclick="document.getElementById('cv-upload').click();">
+    Drag & drop CVs here or click to upload
+    <br />
+    <small>(PDF only)</small>
+    <input
+      type="file"
+      id="cv-upload"
+      accept=".pdf"
+      multiple
+      style="display: none;"
+    />
+    <div id="uploaded-files" style="margin-top: 10px; font-size: 0.95rem; color: #333;"></div>
+  </div>
+</div>
+
+
+      <!-- Action Button -->
+      <button class="btn" onclick="analyzeCVs()">Analyze CVs</button>
+
+
+      <!-- Results Table -->
+      <div id="export-section" class="">
+      <label for="export-format">Choose Export Format:</label>
+      <select id="export-format">
+        <option value="csv">CSV</option>
+        <option value="pdf">PDF</option>
+        <option value="json">JSON</option>
+      </select>
+      <button onclick="exportResults()">Export</button>
+    </div>
+    
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+  </body>
+</html>

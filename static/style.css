@@ -1,0 +1,141 @@
+
+/* style.css */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f5f7fa;
+  margin: 0;
+  padding: 20px;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+h1 {
+  color: #2c3e50;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+label {
+  display: block;
+  margin: 15px 0 8px;
+  color: #34495e;
+  font-weight: 600;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #e0e0e0;
+  border-radius: 6px;
+  margin-bottom: 15px;
+  font-size: 16px;
+}
+
+input[type="text"]:focus {
+  border-color: #3498db;
+  outline: none;
+}
+
+.upload-box {
+  border: 2px dashed #bdc3c7;
+  border-radius: 8px;
+  padding: 30px;
+  text-align: center;
+  color: #7f8c8d;
+  margin: 15px 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.upload-box:hover {
+  border-color: #3498db;
+  background-color: #f8f9ff;
+}
+
+.btn {
+  display: block;
+  width: 100%;
+  padding: 15px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin: 25px 0;
+}
+
+.btn:hover {
+  background-color: #2980b9;
+}
+
+#export-section {
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid #ecf0f1;
+}
+
+#export-format {
+  padding: 8px 12px;
+  border: 2px solid #e0e0e0;
+  border-radius: 6px;
+  margin-right: 10px;
+}
+
+#export-section button {
+  padding: 8px 20px;
+  background-color: #27ae60;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+#export-section button:hover {
+  background-color: #219a52;
+}
+
+.hidden {
+  display: none;
+}
+
+/* File input styling */
+#keyword-file {
+  margin: 10px 0;
+  padding: 8px;
+  border: 2px solid #e0e0e0;
+  border-radius: 6px;
+  width: 100%;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+  .container {
+    padding: 20px;
+  }
+  
+  .upload-box {
+    padding: 20px;
+  }
+  
+  #export-section {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  #export-format {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}

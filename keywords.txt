@@ -1,0 +1,10 @@
+python
+sql
+excel
+data analysis
+power bi
+machine learning
+data visualization
+communication
+problem solving
+statistics
