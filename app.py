@@ -1,5 +1,7 @@
 from flask import Flask, request, jsonify, render_template
 from flask_cors import CORS
+from werkzeug.utils import secure_filename
+
 import os
 from utils import extract_keywords, process_resume, export_results
 
@@ -45,11 +47,12 @@ def scan():
 
     results = []
     for resume in resumes:
-        resume_path = os.path.join(RESUMES_FOLDER, resume.filename)
+        safe_name = secure_filename(resume.filename)
+        resume_path = os.path.join(RESUMES_FOLDER, safe_name)
         resume.save(resume_path)
         score, matched_keywords = process_resume(resume_path, keywords)
         results.append({
-            'fileName': resume.filename, 
+            'filename': resume.filename, 
             'score': score, 
             'matchedKeywords': matched_keywords
         })

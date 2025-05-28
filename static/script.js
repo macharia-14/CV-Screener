@@ -7,8 +7,13 @@ document.querySelector('.upload-box').addEventListener('click', () => {
 
 // Handle file selection via click
 document.getElementById('cv-upload').addEventListener('change', (e) => {
+  //console.log('Change event triggered');
+  if (e.target.files.length === 0) return;
   uploadedCVFiles = Array.from(e.target.files);
+  console.log("Files selected:", uploadedCVFiles);
   showUploadedFiles(uploadedCVFiles);
+
+  e.target.value = ''; // Clear the input value to allow re-uploading the same file
 });
 
 //Drag and drop functionality
@@ -26,8 +31,17 @@ uploadBox.addEventListener('dragleave', () => {
 uploadBox.addEventListener('drop', (event) => {
   event.preventDefault();
   uploadBox.style.background = '';
- uploadedCVFiles = Array.from(event.dataTransfer.files);
-  showUploadedFiles(uploadedCVFiles);
+const newFiles = Array.from(event.dataTransfer.files);
+
+// Filter out duplicates by name
+newFiles.forEach(file => {
+  if (!uploadedCVFiles.some(f => f.name === file.name)) {
+    uploadedCVFiles.push(file);
+  }
+});
+
+showUploadedFiles(uploadedCVFiles);
+
 });
   
 // Show uploaded files with PDF icon
@@ -115,11 +129,12 @@ function exportResults() {
 
 }
 function exportCSV() {
+    const today = new Date().toISOString().split('T')[0];
     let csv = "CV Name, Score, Matched Keywords\n";
     analysisResults.forEach(result => {
-        csv += `${result.cvName}, ${result.score}, ${result.matchedKeywords.join('; ')}\n`;
+        csv += `${result.filename}, ${result.score}, ${result.matchedKeywords.join('; ')}\n`;
     });
-    downloadBlob(csv, 'cv_analysis.csv', 'text/csv');
+    downloadBlob(csv, `cv_analysis_${today}.csv`, 'text/csv');
 }
 function exportJSON(){
     const json = JSON.stringify(analysisResults, null, 2);
@@ -135,3 +150,11 @@ function downloadBlob(content, filename, contentType) {
     a.click();
     
 }
+document.getElementById('clear-cvs').addEventListener('click', () => {
+  uploadedCVFiles = [];
+  document.getElementById('cv-upload').value = ''; // Clears the hidden file input
+  showUploadedFiles(uploadedCVFiles);
+
+  // Optionally hide export section too
+  document.getElementById('export-section').classList.add('hidden');
+});

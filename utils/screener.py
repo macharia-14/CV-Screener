@@ -1,4 +1,5 @@
 import os
+import re
 import docx
 import PyPDF2
 import pandas as pd
@@ -35,16 +36,25 @@ def process_resume(resume_path, keywords):
     matched_keywords = []
     score = 0
 
-    with open(resume_path, 'r', encoding='utf-8', errors='ignore') as f:
-        content = f.read().lower()
+    ext = os.path.splitext(resume_path)[1].lower()
 
+    if ext == '.pdf':
+        content = extract_text_from_pdf(resume_path).lower()
+    elif ext == '.docx':
+        content = extract_text_from_docx(resume_path).lower()
+    elif ext == '.txt':
+        with open(resume_path, 'r', encoding='utf-8', errors='ignore') as f:
+            content = f.read().lower()
+    else:
+        content = ""  # unsupported type
+
+    # Match whole keywords only
     for kw in keywords:
-        if kw.lower() in content:
+        if re.search(r'\b' + re.escape(kw.lower()) + r'\b', content):
             matched_keywords.append(kw)
             score += 1
 
     return score, matched_keywords
-
 
 def export_results(results, format='csv'):
     timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')

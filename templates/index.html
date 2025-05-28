@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-  >
+  
 
     <title>CV Scanner</title>
   </head>
@@ -33,19 +33,24 @@
     <input
       type="file"
       id="cv-upload"
-      accept=".pdf"
+      accept=".pdf, .docx"
       multiple
       style="display: none;"
     />
     <div id="uploaded-files" style="margin-top: 10px; font-size: 0.95rem; color: #333;"></div>
-  </div>
+  
 </div>
 
 
       <!-- Action Button -->
-      <button class="btn" onclick="analyzeCVs()">Analyze CVs</button>
+    <div style="display: flex; justify-content: space-between; align-items: center; gap: 10px;">
+  <button onclick="analyzeCVs()" class="btn" style="flex: 1;">Analyze CVs</button>
+  <button id="clear-cvs" title="Clear uploaded CVs" class="btn btn-clear">🗑️</button>
+</div>
 
+</div>
 
+  </div>
       <!-- Results Table -->
       <div id="export-section" class="">
       <label for="export-format">Choose Export Format:</label>

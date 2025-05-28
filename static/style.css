@@ -1,5 +1,4 @@
 
-/* style.css */
 body {
   font-family: 'Arial', sans-serif;
   background-color: #f5f7fa;
@@ -73,6 +72,14 @@ input[type="text"]:focus {
   cursor: pointer;
   transition: background-color 0.3s ease;
   margin: 25px 0;
+}
+.btn-clear {
+  width: auto;
+  padding: 8px 12px;
+  font-size: 18px;
+  background-color: #dc3545;
+  border-radius: 6px;
+  margin: 0;
 }
 
 .btn:hover {
