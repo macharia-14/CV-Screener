@@ -77,7 +77,7 @@ for (let file of cvFiles) {
 }
 console.log("Sending request with CVs:", formData.getAll('cv_files'));
     try{
-        const response = await fetch('http://localhost:5000/scan', {
+        const response = await fetch('http://127.0.0.1:5000/scan', {
             method: 'POST',
             body: formData
         });

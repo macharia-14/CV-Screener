@@ -1,4 +1,5 @@
 from flask import Flask, request, jsonify, render_template
+from flask_cors import CORS
 import os
 from utils import extract_keywords, process_resume, export_results
 
@@ -8,6 +9,7 @@ RESUMES_FOLDER = os.path.join(UPLOAD_FOLDER, 'resumes')
 RESULTS_FOLDER = 'results'
 
 app = Flask(__name__)
+CORS(app)
 
 os.makedirs(KEYWORDS_FOLDER, exist_ok=True)
 os.makedirs(RESUMES_FOLDER, exist_ok=True)
@@ -51,6 +53,8 @@ def scan():
             'score': score, 
             'matchedKeywords': matched_keywords
         })
+
+    print("✅ Returning results:", results)
 
     return jsonify({'results': results})
 
