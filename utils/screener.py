@@ -31,11 +31,20 @@ def extract_keywords(file_path):
         return content.split(',')
     return []
 
-def process_resume(file_path, keywords):
-    ext = os.path.splitext(file_path)[1].lower()
-    text = extract_text_from_pdf(file_path) if ext == '.pdf' else extract_text_from_docx(file_path)
-    text = text.lower()
-    return sum(1 for kw in keywords if kw.strip().lower() in text)
+def process_resume(resume_path, keywords):
+    matched_keywords = []
+    score = 0
+
+    with open(resume_path, 'r', encoding='utf-8', errors='ignore') as f:
+        content = f.read().lower()
+
+    for kw in keywords:
+        if kw.lower() in content:
+            matched_keywords.append(kw)
+            score += 1
+
+    return score, matched_keywords
+
 
 def export_results(results, format='csv'):
     timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
