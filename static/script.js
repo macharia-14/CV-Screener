@@ -121,13 +121,10 @@ function exportResults() {
     const format = document.getElementById('export-format').value;
     if (format === 'csv'){
         exportCSV();
-    }else if (format === 'json') {
-        exportJSON();
     } else {
         alert('Please select a valid export format.');
     }
-
-}
+  }
 function exportCSV() {
     const today = new Date().toISOString().split('T')[0];
     let csv = "CV Name, Score, Matched Keywords\n";
@@ -136,10 +133,12 @@ function exportCSV() {
     });
     downloadBlob(csv, `cv_analysis_${today}.csv`, 'text/csv');
 }
-function exportJSON(){
+/**function exportJSON(){
     const json = JSON.stringify(analysisResults, null, 2);
     downloadBlob(json, 'cv_analysis.json', 'application/json');
-}
+}**/
+
+
 function downloadBlob(content, filename, contentType) {
     const blob = new Blob([content], { type: contentType });
     const url = URL.createObjectURL(blob);
@@ -152,7 +151,7 @@ function downloadBlob(content, filename, contentType) {
 }
 document.getElementById('clear-cvs').addEventListener('click', () => {
   uploadedCVFiles = [];
-  document.getElementById('cv-upload').value = ''; // Clears the hidden file input
+  document.getElementById('cv-upload').value = ''; 
   showUploadedFiles(uploadedCVFiles);
 
   // Optionally hide export section too

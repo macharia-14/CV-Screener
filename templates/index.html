@@ -6,11 +6,11 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
   
 
-    <title>CV Scanner</title>
+    <title>CV Screener</title>
   </head>
   <body>
     <div class="container">
-      <h1>CV Scanner</h1>
+      <h1>CV Screener</h1>
 
       <!-- Keyword Input -->
       <div>
@@ -56,8 +56,7 @@
       <label for="export-format">Choose Export Format:</label>
       <select id="export-format">
         <option value="csv">CSV</option>
-        <option value="pdf">PDF</option>
-        <option value="json">JSON</option>
+       
       </select>
       <button onclick="exportResults()">Export</button>
     </div>

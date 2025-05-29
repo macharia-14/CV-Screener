@@ -57,7 +57,7 @@ def scan():
             'matchedKeywords': matched_keywords
         })
 
-    print("✅ Returning results:", results)
+   
 
     return jsonify({'results': results})
 
