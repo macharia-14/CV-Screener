@@ -1,10 +1,10 @@
 🧠 CV Screener App
 
-📋 Overview
+1. 📋 Overview
 
 The CV Screener App is a smart, time-saving tool that helps recruiters, hiring teams, and HR professionals quickly identify the most relevant candidates. It allows the user to upload multiple CVs (in PDF or text format) and automatically score them based on specific keywords or skills they are looking for. After screening, users can easily download the results as a spreadsheet, making it simple to share or sort candidate scores.
 
-⚙️ Key Features
+2. ⚙️ Key Features
 
 📂 Bulk Uploads: Upload multiple CVs at once (supports .pdf and .txt files).
 
@@ -16,7 +16,8 @@ The CV Screener App is a smart, time-saving tool that helps recruiters, hiring t
 
 📥 Export Option: Download the final results as a spreadsheet (e.g., CSV or Excel) for easy review and sharing.
 
-🧰 Tech Stack
+
+3. 🧰 Tech Stack
 
 -  Backend: Python
 
@@ -24,7 +25,7 @@ The CV Screener App is a smart, time-saving tool that helps recruiters, hiring t
 
 -  Libraries: PyPDF2 (for PDF parsing), Regex for keyword detection, Pandas for exporting results
 
-🚀 How It Works
+4. 🚀 How It Works
 
 1.  Enter the keywords or skills you want to check for.
 2.  Upload one or more CVs in PDF or text format.
