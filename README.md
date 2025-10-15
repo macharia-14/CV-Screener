@@ -1,23 +1,23 @@
 🧠 CV Screener App
 
-1. 📋 Overview
+📋 Overview
 
-The CV Screener App is a smart, time-saving tool that helps recruiters, hiring teams, and HR professionals quickly identify the most relevant candidates. It allows the user to upload multiple CVs (in PDF or text format) and automatically score them based on specific keywords or skills they are looking for. After screening, users can easily download the results as a spreadsheet, making it simple to share or sort candidate scores.
+  The CV Screener App is a smart, time-saving tool that helps recruiters, hiring teams, and HR professionals quickly identify the most relevant candidates. It allows the user to upload multiple CVs (in PDF or    text format) and automatically score them based on specific keywords or skills they are looking for. After screening, users can easily download the results as a spreadsheet, making it simple to share or sort   candidate scores.
 
-2. ⚙️ Key Features
+⚙️ Key Features
 
-📂 Bulk Uploads: Upload multiple CVs at once (supports .pdf and .txt files).
+  📂 Bulk Uploads: Upload multiple CVs at once (supports .pdf and .txt files).
 
-🧩 Keyword Matching: Enter or upload custom keywords or phrases you want to check for.
+  🧩 Keyword Matching: Enter or upload custom keywords or phrases you want to check for.
 
-📊 Automated Scoring: Each CV is analyzed and scored based on keyword occurrences.
+  📊 Automated Scoring: Each CV is analyzed and scored based on keyword occurrences.
 
-📈 Ranked Results: Instantly view which CVs best match the job requirements.
+  📈 Ranked Results: Instantly view which CVs best match the job requirements.
 
-📥 Export Option: Download the final results as a spreadsheet (e.g., CSV or Excel) for easy review and sharing.
+  📥 Export Option: Download the final results as a spreadsheet (e.g., CSV or Excel) for easy review and sharing.
 
 
-3. 🧰 Tech Stack
+🧰 Tech Stack
 
 -  Backend: Python
 
@@ -25,13 +25,17 @@ The CV Screener App is a smart, time-saving tool that helps recruiters, hiring t
 
 -  Libraries: PyPDF2 (for PDF parsing), Regex for keyword detection, Pandas for exporting results
 
-4. 🚀 How It Works
+🚀 How It Works
 
-1.  Enter the keywords or skills you want to check for.
-2.  Upload one or more CVs in PDF or text format.
-3.  Click Analyze, the app scans and scores each CV.
-4.  View ranked results on screen.
-5.  Download the results sheet to save or share your analysis.
+  1.  Enter the keywords or skills you want to check for.
+     
+  3.  Upload one or more CVs in PDF or text format.
+  
+  4.  Click Analyze, the app scans and scores each CV.
+  
+  5.  View ranked results on screen.
+  
+  6.  Download the results sheet to save or share your analysis.
 
 💡 Why It Matters
 
