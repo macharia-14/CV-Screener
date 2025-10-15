@@ -39,4 +39,4 @@
 
 💡 Why It Matters
 
--  Screening hundreds of CVs manually is time-consuming and error-prone. This app automates that process, giving recruiters a fast and fair way to identify top candidates — so you can spend more time on interviews, not filtering.
+-  Screening hundreds of CVs manually is time-consuming and error-prone. This app automates that process, giving recruiters a fast and fair way to identify top candidates so you can spend more time on interviews, not filtering.
